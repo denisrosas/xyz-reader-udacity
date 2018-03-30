@@ -18,8 +18,18 @@
 <resources>
     <color name="photo_placeholder">#ccc</color>
 
-    <color name="theme_primary">#04561A</color>
-    <color name="theme_primary_dark">#04561A</color>
-    <color name="theme_accent">#04561A</color>
-    <color name="ltgray">#ffe0e0e0</color>
+    <!--Material Indigo 400 - Article list title background-->
+    <color name="theme_primary">#5C6BC0</color>
+
+    <!--Material Indigo 500 - status bar background -->
+    <color name="theme_primary_dark">#3F51B5</color>
+
+    <!--indigo accent 700 - used on FAB background-->
+    <color name="theme_accent">#304FFE</color>
+
+    <!--Article List, title of the article-->
+    <color name="rv_article_item_title">#000000</color>
+
+    <!--texto do artigo em detail e titulo do artigo na lista de artigos-->
+    <color name="detail_body_text">#000000</color>
 </resources>
