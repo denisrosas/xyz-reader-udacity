@@ -9,7 +9,7 @@
         android:id="@+id/toolbar_container"
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        android:background="?colorPrimary"
+        android:background="@drawable/scrim_title_article_list"
         android:elevation="@dimen/app_barElevation">
 
     <android.support.design.widget.CollapsingToolbarLayout

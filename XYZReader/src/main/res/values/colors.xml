@@ -33,6 +33,9 @@
     <!--texto do artigo em detail e titulo do artigo na lista de artigos-->
     <color name="detail_body_text">#000000</color>
 
+    <color name="article_text_backgroud">#FFFFFF</color>
+    <color name="article_textview_backgroud">#FFFFFF</color>
+
 
     <color name="article_detail_view_pager_margin">#000000</color>
 </resources>

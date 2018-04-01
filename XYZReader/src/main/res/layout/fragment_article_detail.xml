@@ -27,20 +27,15 @@
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop" />
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="112dp"
-                    android:background="@drawable/photo_background_protection" />
-
             </FrameLayout>
 
-            <com.example.xyzreader.ui.MaxWidthLinearLayout
+            <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:maxWidth="@dimen/detail_card_max_width"
-                android:background="#fff"
+                android:background="@color/article_textview_backgroud"
                 android:elevation="2dp"
                 android:layout_below="@+id/photo_container">
 
@@ -54,8 +49,7 @@
                     android:paddingLeft="@dimen/detail_inner_horiz_margin"
                     android:paddingRight="@dimen/detail_inner_horiz_margin"
                     android:paddingTop="@dimen/detail_metabar_vert_padding"
-                    android:paddingBottom="@dimen/detail_metabar_vert_padding"
-                    android:layout_marginBottom="@dimen/detail_metabar_vert_padding">
+                    android:paddingBottom="@dimen/detail_metabar_vert_padding" >
 
                     <TextView
                         android:id="@+id/article_title"
@@ -79,20 +73,18 @@
                         android:text="@string/date_article_author"/>
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/article_body"
-                    style="?android:attr/textAppearanceMedium"
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/detail_inner_horiz_margin"
-                    android:layout_marginRight="@dimen/detail_inner_horiz_margin"
-                    android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
-                    android:paddingBottom="@dimen/detail_body_bottom_margin"
-                    android:layout_gravity="start"
-                    android:textColor="@color/detail_body_text"
-                    android:textSize="@dimen/detail_body_text_size" />
+                    android:layout_height="match_parent"
+                    android:background="@color/article_textview_backgroud"
+                    android:layout_gravity="center_horizontal">
 
-            </com.example.xyzreader.ui.MaxWidthLinearLayout>
+                    <TextView
+                        android:id="@+id/article_body"
+                        style="@style/article_text_style" />
+
+                </FrameLayout>
+            </LinearLayout>
         </RelativeLayout>
 
     </com.example.xyzreader.ui.ObservableScrollView>
