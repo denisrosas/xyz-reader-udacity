@@ -230,7 +230,9 @@ public class ArticleDetailFragment extends Fragment implements
                                 + "</font>"));
 
             }
-            bodyView.setText(Html.fromHtml(mCursor.getString(ArticleLoader.Query.BODY).replaceAll("(\r\n|\n)", "<br />")));
+
+            //only create new line in HTML (<BR />) if 2 consecutive new lines are founf in the text
+            bodyView.setText(Html.fromHtml(mCursor.getString(ArticleLoader.Query.BODY).replaceAll("(\r\n\r\n)", "<br /><br />")));
 
             String url = mCursor.getString(ArticleLoader.Query.PHOTO_URL);
             Picasso.with(this.getActivity().getApplicationContext()).load(url).into(mPhotoView);
