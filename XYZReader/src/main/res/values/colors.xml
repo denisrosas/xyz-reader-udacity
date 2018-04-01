@@ -18,14 +18,14 @@
 <resources>
     <color name="photo_placeholder">#ccc</color>
 
-    <!--Material Indigo 400 - Article list title background-->
-    <color name="theme_primary">#5C6BC0</color>
+    <!--Material Indigo 500 - Article list title background-->
+    <color name="theme_primary">#3F51B5</color>
 
-    <!--Material Indigo 500 - status bar background -->
-    <color name="theme_primary_dark">#3F51B5</color>
+    <!--Material Indigo 700 - status bar background -->
+    <color name="theme_primary_dark">#303F9F</color>
 
-    <!--indigo accent 700 - used on FAB background-->
-    <color name="theme_accent">#304FFE</color>
+    <!--Light Green Accent 400 - used on FAB background-->
+    <color name="theme_accent">#76FF03</color>
 
     <!--Article List, title of the article-->
     <color name="rv_article_item_title">#000000</color>
@@ -35,7 +35,6 @@
 
     <color name="article_text_backgroud">#FFFFFF</color>
     <color name="article_textview_backgroud">#FFFFFF</color>
-
 
     <color name="article_detail_view_pager_margin">#000000</color>
 </resources>

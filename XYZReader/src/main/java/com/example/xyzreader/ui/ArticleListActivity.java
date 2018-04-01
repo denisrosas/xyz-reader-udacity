@@ -1,10 +1,14 @@
 package com.example.xyzreader.ui;
 
 import android.app.LoaderManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
@@ -52,10 +56,10 @@ public class ArticleListActivity extends AppCompatActivity implements
 
         final View toolbarContainerView = findViewById(R.id.toolbar_container);
 
-        //mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
-
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         getLoaderManager().initLoader(0, null, this);
+
+        checkInternetConnection();
 
         if (savedInstanceState == null) {
             refresh();
@@ -83,6 +87,7 @@ public class ArticleListActivity extends AppCompatActivity implements
 
     @Override
     public void onLoadFinished(Loader<Cursor> cursorLoader, Cursor cursor) {
+
         Adapter adapter = new Adapter(cursor);
         adapter.setHasStableIds(true);
         mRecyclerView.setAdapter(adapter);
@@ -95,6 +100,17 @@ public class ArticleListActivity extends AppCompatActivity implements
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
         mRecyclerView.setAdapter(null);
+    }
+
+     private void checkInternetConnection() {
+        ConnectivityManager cm = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = cm != null ? cm.getActiveNetworkInfo() : null;
+        boolean connectivityBool = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
+
+        if(!connectivityBool) {
+            View layout = findViewById(R.id.parent_layout_article_list);
+            Snackbar.make(layout, getString(R.string.check_internet_connection), Snackbar.LENGTH_SHORT).show();
+        }
     }
 
     private class Adapter extends RecyclerView.Adapter<ViewHolder> {
